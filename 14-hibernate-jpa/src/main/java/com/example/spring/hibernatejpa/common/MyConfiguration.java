@@ -51,6 +51,7 @@ public class MyConfiguration {
         SinhVien sinhVien = new SinhVien(hoDem, ten, email);
 
         sinhVienDAO.save(sinhVien);
+        System.out.println("Đã thêm thành công sinh viên " + hoDem);
     }
 
     private void timSinhVien(SinhVienDAOImpl sinhVienDAOImpl, Scanner sc) {
@@ -60,6 +61,7 @@ public class MyConfiguration {
         if (sinhVien == null) {
             System.out.println("Không tìm thấy!");
         } else {
+            System.out.println("Kết quả: Tìm thấy 1 sinh viên");
             System.out.println(sinhVien);
         }
     }
@@ -71,6 +73,7 @@ public class MyConfiguration {
         if (sinhVienList.size() == 0) {
             System.out.println("Không tìm thấy!");
         } else {
+            System.out.println("Kết quả: Tìm thấy " + sinhVienList.size() + " sinh viên:");
             sinhVienList.forEach(sinhVien -> {
                 System.out.println(sinhVien);
             });
@@ -79,6 +82,7 @@ public class MyConfiguration {
 
     private void inTatCaSinhVien(SinhVienDAOImpl sinhVienDAOImpl, Scanner sc) {
         List<SinhVien> sinhVienList = sinhVienDAOImpl.getAll();
+        System.out.println("Danh sách sinh viên: ");
         sinhVienList.forEach(sinhVien -> {
             System.out.println(sinhVien);
         });
@@ -102,6 +106,7 @@ public class MyConfiguration {
             sinhVien.setTen(ten);
             sinhVien.setEmail(email);
             sinhVienDAOImpl.update(sinhVien);
+            System.out.println("Cập nhật sinh viên thành công!");
         }
 
     }
@@ -110,6 +115,7 @@ public class MyConfiguration {
         System.out.println("Nhập tên Sinh viên");
         String ten = sc.nextLine();
         int rows = sinhVienDAOImpl.updateAllTen(ten);
+        System.out.println("Cập nhật sinh viên thành công!");
         System.out.println("Có " + rows + " đã bị thay đổi tên");
     }
 
@@ -117,6 +123,7 @@ public class MyConfiguration {
         System.out.println("Nhập id Sinh viên: ");
         int id = sc.nextInt();
         sinhVienDAOImpl.deleteSinhVien(id);
+        System.out.println("Xoá sinh viên thành công!");
     }
 
     public void inMenu() {
