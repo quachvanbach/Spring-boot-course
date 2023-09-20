@@ -1,0 +1,8 @@
+- Cấu hình file pom.xml: Thêm dependency:
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+
+- Cần có @Entity của đối tượng đó.
+- Cần có @RepositoryRestResource của đối tượng đó.

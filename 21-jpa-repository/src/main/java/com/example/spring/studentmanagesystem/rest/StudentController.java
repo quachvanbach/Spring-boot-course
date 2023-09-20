@@ -1,11 +1,8 @@
 package com.example.spring.studentmanagesystem.rest;
 
-import com.example.spring.studentmanagesystem.dao.StudentDAO;
 import com.example.spring.studentmanagesystem.entity.Student;
 import com.example.spring.studentmanagesystem.service.StudentService;
-import com.example.spring.studentmanagesystem.service.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
