@@ -1,0 +1,9 @@
+.table {
+    border: 2px solid;
+    width: 500px;
+}
+
+.card {
+    width: 1920px;
+    align-items: center;
+}
