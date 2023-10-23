@@ -1,4 +1,4 @@
-package com.example.spring.onetoonenunidirectional.entity;
+ package com.example.spring.onetoonenunidirectional.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

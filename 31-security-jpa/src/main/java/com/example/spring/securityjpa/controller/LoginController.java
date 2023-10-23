@@ -14,5 +14,4 @@ public class LoginController {
     public String showPage403() {
         return "error/403";
     }
-
 }

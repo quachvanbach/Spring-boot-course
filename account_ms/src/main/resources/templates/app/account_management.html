@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Account management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div class="container" style="text-align: center">
+    <h3>Maganed Account List</h3>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-info">
+        <tr>
+            <td>ID</td>
+            <td>Account type</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>2FA</td>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Date of birth</td>
+            <td>Phonenumber</td>
+            <td>Gmail</td>
+            <td>Action</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="account, stat:${accountList}">
+            <td th:text="${stat.count}">ID</td>
+            <td th:text="${account.accountType}">Account type</td>
+            <td th:text="${account.username}">Username</td>
+            <td th:text="${account.password}">Password</td>
+            <td th:text="${account.twoFA}">2FA</td>
+            <td th:text="${account.firstName}">First name</td>
+            <td th:text="${account.lastName}">Last name</td>
+            <td th:text="${account.dob}">Date of birth</td>
+            <td th:text="${account.phonenumbers}">Phonenumber</td>
+            <td th:text="${account.gmail}">Gmail</td>
+            <td>
+                <a th:href="@{/app/edit(id=${account.id})}" class="btn btn-info btn-l">Chỉnh sửa</a>
+                <a th:href="@{/app/delete(id=${account.id})}" class="btn btn-danger btn-l"
+                   onclick="return confirm ('Delete account?')">Xoá</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-success btn-sm mb-4" th:href="@{/app/add_new}">Add new</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>

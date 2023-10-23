@@ -29,6 +29,7 @@ public class Teacher {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "teacher_detail_id")
     private TeacherDetail teacherDetail;
+    
     @ToString.Exclude
     @OneToMany(mappedBy = "teacher",
             fetch = FetchType.LAZY,
